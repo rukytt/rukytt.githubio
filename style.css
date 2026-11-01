@@ -1,0 +1,86 @@
+/* Colores en un solo lugar: si querés cambiar la paleta, tocá solo acá. */
+:root {
+  --fondo: #ffffff;
+  --texto: #1a1a1a;
+  --suave: #5c5c5c;
+  --acento: #0b5fff;
+  --borde: #e2e2e2;
+  --tarjeta: #f6f7f9;
+}
+
+/* Si el navegador del visitante está en modo oscuro, se usa esta paleta. */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --fondo: #111418;
+    --texto: #e8e8e8;
+    --suave: #a0a6ad;
+    --acento: #6ea2ff;
+    --borde: #2a2f36;
+    --tarjeta: #1a1e24;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--fondo);
+  color: var(--texto);
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  line-height: 1.6;
+}
+
+/* Centra el contenido y limita el ancho para que se lea bien. */
+main {
+  max-width: 42rem;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+h1 {
+  margin-bottom: 0.25rem;
+}
+
+header p {
+  margin-top: 0;
+  color: var(--suave);
+}
+
+a {
+  color: var(--acento);
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  margin: 0.5rem 0;
+}
+
+/* Cada enlace de una lista se ve como una tarjeta. */
+li a {
+  display: block;
+  padding: 0.75rem 1rem;
+  background: var(--tarjeta);
+  border: 1px solid var(--borde);
+  border-radius: 0.5rem;
+  text-decoration: none;
+  transition: border-color 0.15s ease;
+}
+
+li a:hover,
+li a:focus-visible {
+  border-color: var(--acento);
+}
+
+footer {
+  margin-top: 3rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--borde);
+  color: var(--suave);
+  font-size: 0.875rem;
+}
